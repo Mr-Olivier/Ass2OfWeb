@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Individual Assignment 2</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container"></div>
+    <h1>Name: Olivier Iradukunda</h1>
+    <h1>RegNo: 222005508</h1>
+
+    <!-- Q1: Sum of all numbers -->
+    <h2>Q1: Sum of all numbers:</h2>
+    <div class="answer">
+      <p id="sumResult"></p>
+    </div>
+
+    <!-- Q2: Find the largest number -->
+
+    <h2>Q2: Find the largest number in the array</h2>
+    <div class="answer"><p id="largestNumber"></p></div>
+
+    <!-- Q3: Sort the array in ascending order -->
+    <h2>Q3: Sort the array in ascending order</h2>
+    <div class="answer">
+      <p id="sortedArray"></p>
+    </div>
+
+    <!-- Q4: Reverse the array -->
+    <h2>Q4: Reverse the array</h2>
+    <div class="answer">
+      <p id="reversedArray"></p>
+    </div>
+
+    <!-- Q5: Return only even numbers -->
+    <h2>Q5: Return only even numbers</h2>
+    <div class="answer">
+      <p id="evenNumbers"></p>
+    </div>
+
+    <!-- Q6: Return only odd numbers -->
+    <h2>Q6: Return only odd numbers</h2>
+    <div class="answer">
+      <p id="oddNumbers"></p>
+    </div>
+
+    <!-- Return the average of the numbers -->
+    <h2>Q7: Return the average of the numbers</h2>
+    <div class="answer">
+      <p id="averageNumber"></p>
+    </div>
+
+    <!-- Q8: Remove duplicates from  the array -->
+    <h2>Q8: Remove duplicates from the array</h2>
+    <div class="answer">
+      <p id="uniqueNumbers"></p>
+    </div>
+
+    <!-- Q9: Return the median value -->
+    <h2>Q9: Return the median value</h2>
+    <div class="answer">
+      <p id="medianValue"></p>
+    </div>
+
+    <!-- Q10: Multiply all elements in the array by 2 -->
+    <h2>Q10: Multiply all elements in the array by 2</h2>
+    <div class="answer">
+      <p id="multipliedArray"></p>
+    </div>
+
+    <script>
+      const numbers = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+      ];
+
+      // Function to find the sum of all numbers
+      function findSum(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      }
+
+      // Function to find the largest number
+      function findLargest(arr) {
+        let largest = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] > largest) {
+            largest = arr[i];
+          }
+        }
+        return largest;
+      }
+
+      // Q3: Function to sort the array in ascending order using a loop (bubble sort)
+      function sortedArray(arr) {
+        let sortedArr = [...arr];
+        for (let i = 0; i < sortedArr.length; i++) {
+          for (let j = 0; j < sortedArr - 1; j++) {
+            if (sortedArr[j] > sortedArr[j + 1]) {
+              let temp = sortedArr[j];
+              sortedArr[j] = sortedArr[j + 1];
+              sortedArr[j + 1] = temp;
+            }
+          }
+        }
+        return sortedArr;
+      }
+
+      // Q4: Function to reverse the array using a loop
+      function reverseArray(arr) {
+        let reverseArr = [];
+        for (let i = arr.length - 1; i >= 0; i--) {
+          reverseArr.push(arr[i]);
+        }
+        return reverseArr;
+      }
+
+      // Q5: Function to return only even numbers
+      function getEvenNumbers(arr) {
+        let evenNumbers = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 === 0) {
+            evenNumbers.push(arr[i]);
+          }
+        }
+        return evenNumbers;
+      }
+
+      // Q6: Function to return only odd numbers
+      function getOddNumbers(arr) {
+        let oddNumbers = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 !== 0) {
+            oddNumbers.push(arr[i]);
+          }
+        }
+        return oddNumbers;
+      }
+
+      // Q7: Function to return the average of the numbers
+      function findAverage(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum / arr.length;
+      }
+
+      // Q8: Function to remove duplicates
+      function removeDuplicates(arr) {
+        let uniqueNumbers = [];
+        for (let i = 0; i < arr.length; arr++) {
+          if (!uniqueNumbers.includes(arr[i])) {
+            uniqueNumbers.push(arr[i]);
+          }
+        }
+        return uniqueNumbers;
+      }
+
+      // Q9: Function to find the median
+      function findMedian(arr) {
+        let sortedArr = sortedArray(arr);
+        let mid = Math.floor(sortedArr.length / 2);
+        if (sortedArr.length % 2 === 0) {
+          return (sortedArr[mid - 1] + sortedArr[mid]) / 2;
+        } else {
+          return sortedArr[mid];
+        }
+      }
+
+      // Q10: Function to multiply all elements by 2
+      function multiplyByTwo(arr) {
+        let multipliedArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          multipliedArr.push(arr[i] * 2);
+        }
+        return multipliedArr;
+      }
+
+      // Display the results
+      const sum = findSum(numbers);
+      document.getElementById("sumResult").textContent = sum;
+
+      const largest = findLargest(numbers);
+      document.getElementById("largestNumber").textContent = largest;
+
+      document.getElementById("sortedArray").textContent =
+        sortedArray(numbers).join(", ");
+
+      document.getElementById("reversedArray").textContent =
+        reverseArray(numbers).join(", ");
+
+      document.getElementById("evenNumbers").textContent =
+        getEvenNumbers(numbers).join(", ");
+
+      document.getElementById("oddNumbers").textContent =
+        getOddNumbers(numbers).join(", ");
+
+      document.getElementById("averageNumber").textContent =
+        findAverage(numbers);
+
+      document.getElementById("uniqueNumbers").textContent =
+        removeDuplicates(numbers).join(", ");
+
+      document.getElementById("medianValue").textContent = findMedian(numbers);
+
+      document.getElementById("multipliedArray").textContent =
+        multiplyByTwo(numbers).join(", ");
+    </script>
+  </body>
+</html>
