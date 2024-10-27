@@ -5,16 +5,6 @@ body {
   padding: 0;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  text-align: center;
-}
-
 h1 {
   color: #333;
   margin-bottom: 10px;
@@ -26,7 +16,7 @@ h2 {
 }
 
 .answer {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
   color: #007bff;
   margin-top: 10px;
@@ -34,4 +24,13 @@ h2 {
 
 p {
   padding: 10px;
+}
+
+.defaultClass {
+  color: black;
+}
+
+.newClass {
+  color: red;
+  font-weight: bold;
 }
